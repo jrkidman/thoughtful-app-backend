@@ -2,6 +2,7 @@ require('dotenv').config()
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
+const promptRouter = require('./routes/promptRouter');
 const userRouter = require('./routes/userRouter');
 
 const port = process.env.PORT;
@@ -21,6 +22,9 @@ app.use(bodyParser.json());
 
 //userRoutes
 app.use(userRouter);
+
+//promptRoutes
+app.use(promptRouter)
 
 
 

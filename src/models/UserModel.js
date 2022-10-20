@@ -32,6 +32,13 @@ const userSchema = new mongoose.Schema({
 
 })
 
+const loveLanguageSchema = new mongoose.Schema({
+    prompt: { type: String, required: true, trim: true },
+    category: { type: String, required: true, trim: true },
+})
+
+
+
 // const user = {
     // name: string,
     // email: string,
@@ -66,9 +73,7 @@ const userSchema = new mongoose.Schema({
 //         WeekendsOnly],
 // }
 
-
-
-
+    
 
 
 
