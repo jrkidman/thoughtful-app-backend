@@ -9,6 +9,11 @@ const port = process.env.PORT;
 
 const app = express();
 
+//enable Mongo
+
+
+
+//mongoose connection
 mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING)
 .then(()=> console.log('connected to database successfully'))
 .catch(()=> console.log('unable to connect to database'))

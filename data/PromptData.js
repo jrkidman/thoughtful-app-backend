@@ -1,4 +1,4 @@
-{[
+[
         {
             "prompt": "Make your partner breakfast in bed.",
             "category": "acts of service"
@@ -708,6 +708,6 @@
             "category": "gift giving"
         },
     ]
-}
+
 
 
