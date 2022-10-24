@@ -20,13 +20,13 @@ const userSchema = new mongoose.Schema({
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
     email: { type: String, required: true, trim: true },
-    phoneNumber: { type: String, required: true },
+    // phoneNumber: { type: String, required: true },
     password: { type: String, required: true, trim: true },
     profilePicture: { type: String, required: true, trim: true },
     isAdmin: { type: Boolean, required: true, default: false },
-    partnerName: { type: String, required: false, trim: true },
-    anniversary: { type: Date, required: false },
-    partnerBirthday: { type: Date, required: false },
+    // partnerName: { type: String, required: false, trim: true },
+    // anniversary: { type: Date, required: false },
+    // partnerBirthday: { type: Date, required: false },
     // preferredLoveLanguages: { type: Array, required: true, default: loveLanguageOptions },
     // preferredFrequency: {type: String, required: true, default: frequencyOptions[0] }
 

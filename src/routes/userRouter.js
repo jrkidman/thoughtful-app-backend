@@ -1,24 +1,32 @@
 const express = require('express');
-const UserModel = require('../models/UserModel');
+// const UserModel = require('../models/UserModel');
+const UserService = require('../services/UserService');
+
 
 const userRouter = express.Router();
 
 // route to create user account
-userRouter.post('/register-user', (req, res, next) => {
-    // console.log('our user route is working');
-    console.log('req.body: ', req.body);
+userRouter.post('/register-user', UserService.registerUser);
 
-    const { firstName, lastName, email, phoneNumber, password, profilePicture, isAdmin, partnerName, anniversary, partnerBirthday } = req.body;
+//this block works on postman to register a user with the saved postman route
+// userRouter.post('/register-user', (req, res, next) => {
+//     console.log('req.body: ', req.body);
+//     //route to test on postman
+//     const { firstName, lastName, email, phoneNumber, password, profilePicture, isAdmin } = req.body;
+//     const userDocument = new UserModel({
+//         firstName, lastName, email, phoneNumber, password, profilePicture, isAdmin
+//     });
+//     userDocument.save();
+//     res.send('route hit successfully');
 
-    const userDocument = new UserModel({
-        firstName, lastName, email, phoneNumber, password, profilePicture, isAdmin, partnerName, anniversary, partnerBirthday
-    });
+// });
 
-    userDocument.save();
+// routes to sign in and out
+userRouter.post('/login', UserService.signIn);
 
-    res.send('route hit successfully');
+userRouter.get('/sign-out', UserService.signOut)
 
-});
+
 
 module.exports = userRouter;
 
