@@ -43,7 +43,7 @@ const registerUser = async (req, res, next) => {
         console.log("userDocument: ", userDocument);
 
         await userDocument.save();
-        
+
 
         const token = getToken(userDocument._id);
 

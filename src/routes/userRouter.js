@@ -8,6 +8,7 @@ const userRouter = express.Router();
 // route to create user account
 userRouter.post('/register-user', UserService.registerUser);
 
+
 //this block works on postman to register a user with the saved postman route
 // userRouter.post('/register-user', (req, res, next) => {
 //     console.log('req.body: ', req.body);
