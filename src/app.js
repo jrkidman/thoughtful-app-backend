@@ -40,4 +40,4 @@ app.use(promptRouter)
 
 
 
-app.listen(4000, () => console.log('music store server is listening for requests'));
+app.listen(4000, () => console.log('Thoughtful app server is listening for requests'));
