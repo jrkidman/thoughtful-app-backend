@@ -5,9 +5,10 @@ const PromptModel = require('../models/PromptModel');
 
 const promptRouter = express.Router();
 
-// route to add a prompt
-promptRouter.post('/create-prompt', (req, res, next) => {
-    // below is for adding single prompt via postman, etc
+// route to add a prompt, need to work on this and create the page on the frontend
+
+promptRouter.post('/add-prompt', (req, res, next) => {
+    // below is for adding a prompt via postman, etc
     console.log('req.body: ', req.body);
     const { prompt, category } = req.body;
     const promptDocument = new PromptModel({
@@ -27,9 +28,6 @@ const getPrompt = async (req, res, next) => {
         let random = Math.floor(Math.random() * 177)
         //fetch a prompt
         const randomPrompt = await PromptModel.findOne().skip(random)
-        // .exec(function(err, result){
-        //     console.log(result)
-        // });
 
         //return it to the frontend
         res.send(randomPrompt.prompt);
@@ -38,6 +36,8 @@ const getPrompt = async (req, res, next) => {
         next(error);
     }
 };
+
+promptRouter.get('/prompt', getPrompt);
 
 // simple findOne to test route
 // const getPrompt = async (req, res, next) => {
@@ -53,7 +53,6 @@ const getPrompt = async (req, res, next) => {
 
 
 
-promptRouter.get('/prompt', getPrompt);
 
 
 
