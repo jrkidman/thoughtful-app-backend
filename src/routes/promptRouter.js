@@ -24,7 +24,7 @@ const addPrompt = async(req, res, next)=>{
     }
 
 }
-promptRouter.post('/add-prompt', addPrompt);
+promptRouter.post('/api/add-prompt', addPrompt);
 
     // below is for adding a prompt via postman, etc
     // console.log('req.body: ', req.body);
@@ -54,7 +54,7 @@ const getPrompt = async (req, res, next) => {
     }
 };
 
-promptRouter.get('/prompt', getPrompt);
+promptRouter.get('/api/prompt', getPrompt);
 
 // simple findOne to test route
 // const getPrompt = async (req, res, next) => {

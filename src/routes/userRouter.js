@@ -6,8 +6,8 @@ const UserService = require('../services/UserService');
 const userRouter = express.Router();
 
 // route to create user account
-userRouter.post('/register-user', UserService.registerUser);
-userRouter.put('/edit-profile', UserService.registerUser);
+userRouter.post('/api/register-user', UserService.registerUser);
+userRouter.put('/api/edit-profile', UserService.registerUser);
 
 //this block works on postman to register a user with the saved postman route
 // userRouter.post('/register-user', (req, res, next) => {
@@ -23,9 +23,9 @@ userRouter.put('/edit-profile', UserService.registerUser);
 // });
 
 // routes to sign in and out
-userRouter.post('/login', UserService.signIn);
+userRouter.post('/api/login', UserService.signIn);
 
-userRouter.get('/sign-out', UserService.signOut)
+userRouter.get('/api/sign-out', UserService.signOut)
 
 
 
