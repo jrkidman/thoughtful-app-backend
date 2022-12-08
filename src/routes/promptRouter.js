@@ -7,16 +7,33 @@ const promptRouter = express.Router();
 
 // route to add a prompt, need to work on this and create the page on the frontend
 
-promptRouter.post('/add-prompt', (req, res, next) => {
+const addPrompt = async(req, res, next)=>{
+    try {
+        const { prompt, category } = req.body;
+        const promptDocument = new PromptModel({
+            prompt, category
+        });
+        console.log('req.body: ', req.body);
+
+        await promptDocument.save();
+
+        res.send('route hit successfully');
+    
+    } catch (error) {
+        next(error)
+    }
+
+}
+promptRouter.post('/add-prompt', addPrompt);
+
     // below is for adding a prompt via postman, etc
-    console.log('req.body: ', req.body);
-    const { prompt, category } = req.body;
-    const promptDocument = new PromptModel({
-        prompt, category
-    });
-    promptDocument.save();
-    res.send('route hit successfully');
-});
+    // console.log('req.body: ', req.body);
+    // const { prompt, category } = req.body;
+    // const promptDocument = new PromptModel({
+    //     prompt, category
+    // });
+    // promptDocument.save();
+    // res.send('route hit successfully');
 
 
 
